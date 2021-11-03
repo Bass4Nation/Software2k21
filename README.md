@@ -7,7 +7,7 @@ prosjekt nivå
 
 Sjekk i terminal om det virker
 Om det popper opp versjonsnummer så skal det virke
-node -v
+node -v                                                                    
 npm -v
 
 
