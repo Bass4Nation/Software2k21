@@ -1,5 +1,8 @@
 # Software2k21
 
+## Videoer
+1. https://youtu.be/w7ejDZ8SWv8?t=758 - React JS Crash Course 2021 - Viser ganske fint hvordan react virker.
+
 I terminal på eks Visual Studio Code
 prosjekt nivå
 ## Must have
