@@ -19,7 +19,7 @@ npm install
 npm start
 
 # Om du vil teste et eget prosjekt for å se hvordan React.js er
-terminal command: npx create-react-app .
+terminal command: npx create-react-app .                                          
 Er . på slutten for å gjøre det i den mappen terminalen er i. Kunne skrive noe der . er for at prosjektet skal hete noe.
 EKS: npx create-react-app appnavn
 
