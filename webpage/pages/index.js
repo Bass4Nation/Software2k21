@@ -9,7 +9,6 @@ export default function Home() {
   return (
     <>
     <section>
-    <h2>Alle Annonser</h2>
     <ShowAll />
     </section>
 
