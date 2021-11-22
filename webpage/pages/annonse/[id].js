@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 
     return (
         <>
-        <h1>DYNAMSIK</h1>
+        <h1>DYNAMISK</h1>
         </>
     )
 

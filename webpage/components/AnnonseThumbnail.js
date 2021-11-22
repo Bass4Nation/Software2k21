@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 
-const AnnonseTumbnail = ({data}) => {
+const AnnonseThumbnail = ({data}) => {
 
 
     return (
@@ -16,4 +16,4 @@ const AnnonseTumbnail = ({data}) => {
 
 }
 
-export default AnnonseTumbnail
+export default AnnonseThumbnail
