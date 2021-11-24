@@ -1,4 +1,4 @@
-import AnnonseTumbnail from "./AnnonseTumbnail"
+import AnnonseThumbnail from "./AnnonseThumbnail"
 
 const ShowAll = () =>{
 
@@ -9,7 +9,7 @@ const ShowAll = () =>{
     ]
 
     const all = annonser.map((annonse) =>(
-        <AnnonseTumbnail data={annonse} />
+        <AnnonseThumbnail data={annonse} />
     ))
 
     return( 
