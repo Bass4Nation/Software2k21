@@ -39,6 +39,14 @@ li a {
 li a:hover {
   background-color: #111;
 }
+li input{
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+  margin-top: 5px;
+}
 
 footer {
   position: fixed;

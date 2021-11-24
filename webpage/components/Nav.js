@@ -17,6 +17,7 @@ const Nav = () =>{
         <ul>
         {navList}
         <li ><Link href={`/user/login`}>Login</Link></li>
+        <li><input type = "text" placeholder="Søkefelt" ></input></li>
         </ul>
         </>
     )
