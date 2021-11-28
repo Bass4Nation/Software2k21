@@ -1,14 +1,14 @@
 import { useRouter } from 'next/router';
 
  const Annonse = () =>{
-    const router = useRouter();
+    const router = useRouter()
 
 
     return (
         <>
-        <picture>
+        {/* <picture>
         <img src="" alt="Very nice antique" style="width:500px;"/>
-        </picture>
+        </picture> */}
 
         <h2>Tittel</h2>
         <p>Kjøp nå pris: XXX</p> <p>Bud pris: XXX</p>

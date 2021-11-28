@@ -4,8 +4,8 @@ const Nav = () =>{
 
     const navElements = [
         {link: '/', lable: 'Show all'},
-        {link: 'asnasfn', lable: 'element 2'},
-        {link: 'asnasfn', lable: 'element 3'},
+        // {link: 'asnasfn', lable: 'element 2'},
+        // {link: 'asnasfn', lable: 'element 3'},
     ]
 
     const navList = navElements.map((single) => (
