@@ -44,11 +44,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/dashboard/view.js"
-    ],
-    "/user/login": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/user/login.js"
     ]
   },
   "ampFirstPages": []
