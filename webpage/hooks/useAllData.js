@@ -8,6 +8,7 @@ export const useAllData = () => {
     const [alldata, setAllData] = useState({})
 
     useEffect(() => {
+        let abortController = new AbortController();
         const getAllData = async () => {
             try {
                 // GET-request til /api/quiz
@@ -28,6 +29,9 @@ export const useAllData = () => {
         }
         // trigger henting av data når komponenten lages
     getAllData()
+    return () => {
+        abortController.abort();
+      }
     }, [alldata])
 
     return {alldata}
