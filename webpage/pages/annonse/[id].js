@@ -1,19 +1,40 @@
 import { useRouter } from 'next/router';
+import { useAllAnnonser } from '../../hooks/useAllAnnonser';
+import Image from 'next/image'
+
+
 
  const Annonse = () =>{
     const router = useRouter()
 
+    const {allannonser} = useAllAnnonser()
+
+
 
     return (
         <>
-        {/* <picture>
-        <img src="" alt="Very nice antique" style="width:500px;"/>
-        </picture> */}
+        <section>
+        {allannonser
+        ?.filter(annonse => annonse.id.toString() === router.query.id)
+        ?.map((i)=>(
+            <>
+            <h2>{i.tittel}</h2>
+            <Image
+              src={"/images/" + i?.bildeid + ".jpg"}
+              alt="Annonse Bilde"
+              width={200}
+              height={150}
+            />
 
-        <h2>Tittel</h2>
-        <p>Kjøp nå pris: XXX</p> <p>Bud pris: XXX</p>
+        <p>Kjøp nå pris: {i.kjopnu}</p> <p>Bud pris: {i.startbud}</p>
         <button>Kjøp nå</button> <button>Gi bud</button>
-        <p>Beskrivelse....</p>
+        <p>----------- Beskrivelse -----------</p>
+        <p>{i.beskrivelse}</p>
+        </>
+
+
+        ))}
+        </section>
 
         </>
     )

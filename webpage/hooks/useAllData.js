@@ -13,7 +13,7 @@ export const useAllData = () => {
                 // GET-request til /api/quiz
                 const response = await axios.get('/api/userdata')
     
-                console.log(response)
+                // console.log(response)
     
                 // response.data kommer fra axios
                 // success er noe som jeg har laget i responsen

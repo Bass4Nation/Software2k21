@@ -58,3 +58,27 @@ footer {
 .HeadTitle {
   text-align: center;
 }
+
+.userannonser{
+ display: flex;
+ flex-wrap:wrap;
+}
+.userannonser .annonse{
+  padding:2em;
+}
+.userannonser .annonse.annonse:hover{
+  border-style: solid;
+}
+
+.showAll{
+  display: flex;
+  flex-wrap:wrap;
+}
+
+.showAll .annonse{
+  max-width:10em;
+  padding:2em;
+}
+.showAll .annonse:hover{
+  border-style:inset;
+}
