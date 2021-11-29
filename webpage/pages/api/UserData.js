@@ -30,7 +30,7 @@ const userdata = [
       },
       {
         id: 4,
-        tittel: "kamera",
+        tittel: "Kamera",
         beskrivelse: "oasfnfoiasnfoiasnfasoind",
         kjopnu: 1000,
         startbud: 100,
@@ -53,7 +53,7 @@ const userdata = [
       },
       {
         id: 6,
-        tittel: "spesielt design kniv",
+        tittel: "Spesielt design kniv",
         beskrivelse: "oasfnfoiasnfoiasnfasoind",
         kjopnu: 1000,
         startbud: 100,
@@ -69,7 +69,7 @@ const userdata = [
       },
       {
         id: 8,
-        tittel: "tittelen for gruppe17 sin første annonse",
+        tittel: "Strykejern",
         beskrivelse: "oasfnfoiasnfoiasnfasoind",
         kjopnu: 1000,
         startbud: 100,
