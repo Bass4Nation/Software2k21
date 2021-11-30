@@ -93,10 +93,10 @@ export default function handler(req, res) {
         .json({ success: false, error: "Fyll ut all nødvendig data" });
     } else {
       // legger til data i quiz listen vår
-      quiz.push(data);
+      userdata.push(data);
 
       // sender status 201 (Created) og den nye oppdaterte listen
-      res.status(201).json({ success: true, data: quiz });
+      res.status(201).json({ success: true, data: userdata });
     }
   } else if (req.method === "PUT") {
     // sender status 405 => metoden er ikke lov

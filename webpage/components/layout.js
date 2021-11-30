@@ -6,7 +6,7 @@ const Layout = ({ children }) =>{
     return(
         <>
         <section>
-            <h1 class="HeadTitle"> Software OPPGAVE</h1>
+                <h1 className="HeadTitle"> Software OPPGAVE</h1>
         </section>
         <Nav />
         <main>
