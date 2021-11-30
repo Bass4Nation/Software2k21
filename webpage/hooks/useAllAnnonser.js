@@ -37,7 +37,7 @@ import axios from 'axios'
         }
         // trigger henting av data når komponenten lages
     getAllData()
-    }, [allannonser])
+    }, [])
 
     return {allannonser}
  }

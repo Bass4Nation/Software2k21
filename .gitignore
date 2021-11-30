@@ -32,3 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+webpage/.next/build-manifest.json
+*.json
+*.pack
