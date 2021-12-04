@@ -8,6 +8,8 @@ const AnnonseThumbnail = ({data}) => {
 
     return (
         <>
+        <Link href={`/annonse/${encodeURIComponent(data?.id)}`} passHref>
+
         <section className="annonse">
         <h3>{data?.tittel}</h3>
         <Image 
@@ -17,9 +19,11 @@ const AnnonseThumbnail = ({data}) => {
         height={70}
         />
         <p>pris: {data?.kjopnu}kr</p>
-        <Link  href={`/annonse/${encodeURIComponent(data?.id)}`}>LES MER</Link>
+        <p  >LES MER</p>
 
         </section>
+        </Link>
+
         </>
     )
 

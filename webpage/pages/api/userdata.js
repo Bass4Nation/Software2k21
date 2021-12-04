@@ -85,8 +85,17 @@ export default function handler(req, res) {
     // tar i mot data som sendes med forespørselen
     const data = req.body;
 
+    var arr =   {
+      id: "2",
+      username: "tester",
+      password: "tester",
+      userannonser: [data],
+  }
+    
+    console.log(arr)
+
     // undersøke om request body har key = question
-    if (!data?.question) {
+    if (!data?.tittel) {
       // hvis ikke returner 400 Bad Request
       // sender med feilmelding som vi kan bruke (error: ...)
       res
@@ -94,7 +103,7 @@ export default function handler(req, res) {
         .json({ success: false, error: "Fyll ut all nødvendig data" });
     } else {
       // legger til data i quiz listen vår
-      userdata.push(data);
+      userdata.push(arr);
 
       // sender status 201 (Created) og den nye oppdaterte listen
       res.status(201).json({ success: true, data: userdata });

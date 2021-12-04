@@ -23,6 +23,18 @@ test('Skal gå til login siden, så klikke på Show All så gå til den siden', 
 
 })
 
+test('Skal gå inn på annonsen Gammel Telefon på forsiden', async ({page}) =>{
+    await page.goto('http://localhost:3000/')
+
+    await expect(page).toHaveURL('http://localhost:3000/')
+
+    await page.click('text=Gammel Telefon')
+
+    await expect(page.locator('h2')).toContainText('Gammel Telefon')
+
+
+})
+
 test('Skal den forvente feil om det er en siden som ikke finnes. ', async ({page}) => {
 
     await page.goto('http://localhost:3000/user')
