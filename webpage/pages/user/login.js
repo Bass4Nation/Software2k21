@@ -5,9 +5,9 @@ return(
     <>
     <section>
         <p>Brukernavn</p>
-        <input></input>
+        <input placeholder="brukernavn"></input>
         <p>Passord</p>
-        <input></input>
+        <input placeholder="passord"></input>
         <button>Logg inn</button>
     </section>
     </>
