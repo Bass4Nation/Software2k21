@@ -79,6 +79,7 @@ const userdata = [
   },
 ];
 
+// API funksjonene til nettsiden
 export default function handler(req, res) {
   if (req.method === "POST") {
     // tar i mot data som sendes med forespørselen
