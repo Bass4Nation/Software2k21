@@ -16,6 +16,7 @@ a {
 }
 
 ul {
+  display: flex;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -23,9 +24,7 @@ ul {
   background-color: #333;
 }
 
-li {
-  float: left;
-}
+
 
 li a {
   display: block;
@@ -35,7 +34,6 @@ li a {
   text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
 li a:hover {
   background-color: #111;
 }
@@ -58,3 +56,28 @@ footer {
 .HeadTitle {
   text-align: center;
 }
+
+.userannonser{
+ display: flex;
+ flex-wrap:wrap;
+}
+.userannonser .annonse{
+  padding:2em;
+}
+.userannonser .annonse.annonse:hover{
+  border-style: solid;
+}
+
+.showAll{
+  display: flex;
+  flex-wrap:wrap;
+}
+
+.showAll .annonse{
+  max-width:10em;
+  padding:2em;
+}
+.showAll .annonse:hover{
+  border-style:inset;
+}
+
