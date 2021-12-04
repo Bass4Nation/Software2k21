@@ -13,7 +13,7 @@ import axios from 'axios'
                 // GET-request til /api/quiz
                 const response = await axios.get('/api/userdata')
     
-                //   console.log(response?.data.data[0].userannonser)
+                   console.log(response?.data.data[0].userannonser)
     
                 // response.data kommer fra axios
                 // success er noe som jeg har laget i responsen

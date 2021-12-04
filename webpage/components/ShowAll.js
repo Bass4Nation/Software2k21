@@ -1,6 +1,6 @@
 import AnnonseThumbnail from "./AnnonseThumbnail"
 
-import { useAllData } from "../hooks/useAllData"
+// import { useAllData } from "../hooks/useAllData"
 import { useAllAnnonser } from "../hooks/useAllAnnonser"
 
 
@@ -9,7 +9,7 @@ const ShowAll = () =>{
       console.log(allannonser)
 
     const all = allannonser?.map((annonse) =>(
-        <AnnonseThumbnail data={annonse} />
+        <AnnonseThumbnail key={annonse} data={annonse} />
     ))
 
     return( 
