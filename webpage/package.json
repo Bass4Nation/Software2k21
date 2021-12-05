@@ -13,7 +13,8 @@
     "next": "12.0.4",
     "nookies": "^2.5.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "state-pool": "^0.6.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.16.3",

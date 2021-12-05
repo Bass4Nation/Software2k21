@@ -1,33 +1,27 @@
 import { useRouter } from "next/dist/client/router";
 import { useState } from "react";
 import { useAllData } from "../hooks/useAllData";
-import { useUser } from "../hooks/useUser";
-import { makeAdmin, removeAdmin } from "../lib/utils/user";
+import { useGlobalState } from "state-pool";
 
 const LogIn = () => {
+  const [loggedInState, setLoggedInState] = useGlobalState("stateUser");
+  const [user, setUser] = useGlobalState("user");
   const router = useRouter();
-  const { user, admin, setSelectedUser } = useUser();
-  console.log(user);
 
   const { alldata } = useAllData();
-  console.log(alldata);
 
   const [form, setForm] = useState({
     username: "",
     password: "",
   });
 
+  console.log(loggedInState);
+
   const handleInputOnChange = ({ currentTarget: { name, value } }) =>
     setForm((state) => ({ ...state, [name]: value }));
 
-  const handleLogDirectInBtn = () => {
-    router.push("/dashboard/admin");
-  };
-
   const handleLogInCheck = async (event) => {
     event.preventDefault();
-
-    // console.log(form)
     logInCheck();
   };
 
@@ -37,20 +31,14 @@ const LogIn = () => {
         console.log("brukernavnet er der");
         if (element.password == form.password) {
           console.log("Passord er også riktig");
-          // console.log(element)
-          setSelectedUser(element);
-          setUserAsLoggedIn();
-          //   router.reload()
+          setLoggedInState(true);
+          setUser(element);
+          router.push("/dashboard/" + element.username);
         } else {
           alert("Passord er feil");
         }
       }
     });
-  };
-
-  const setUserAsLoggedIn = () => {
-    makeAdmin();
-    router.reload();
   };
 
   return (
@@ -73,7 +61,7 @@ const LogIn = () => {
             onChange={handleInputOnChange}
             value={form.password}
           />
-          <button type="submit">TEST LOGG INN</button>
+          <button type="submit">Logg inn</button>
         </form>
       </section>
       <section>
