@@ -2,7 +2,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const AnnonseThumbnail = ({data}) => {
-    // console.log(data)
 
     const idPicture = "/images/"+data?.bildeid+".jpg"
 

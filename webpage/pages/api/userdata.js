@@ -90,7 +90,7 @@ export default function handler(req, res) {
     console.log(data)
 
     // undersøke om request body har key = question
-    if (!data?.tittel) {
+    if (!data) {
       // hvis ikke returner 400 Bad Request
       // sender med feilmelding som vi kan bruke (error: ...)
       res
@@ -98,7 +98,7 @@ export default function handler(req, res) {
         .json({ success: false, error: "Fyll ut all nødvendig data" });
     } else {
       // legger til data i quiz listen vår
-      userdata.push(arr);
+      userdata.push(data);
 
       // sender status 201 (Created) og den nye oppdaterte listen
       res.status(201).json({ success: true, data: userdata });

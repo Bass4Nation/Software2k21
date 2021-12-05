@@ -1,11 +1,19 @@
 import NavComponent from "./NavComponent"
 import Link from 'next/link'
-const Nav = () =>{
+import { useRouter } from 'next/router'
+import { useUser } from '../hooks/useUser'
+import { makeAdmin, removeAdmin } from '../lib/utils/user'
 
+const Nav = () =>{
+    const { user, admin, setSelectedUser } = useUser()
+    const router = useRouter()
+
+    console.log(user)
+    console.log(admin)
+  
     const navElements = [
         {link: '/', lable: 'Show all'},
-        // {link: 'asnasfn', lable: 'element 2'},
-        // {link: 'asnasfn', lable: 'element 3'},
+        // {link: 'link adresse', lable: 'nav tab title'},
     ]
 
     const navList = navElements.map((single) => (
@@ -17,7 +25,10 @@ const Nav = () =>{
         <ul>
         {navList}
         <li><input type = "text" placeholder="Søkefelt" ></input></li>
-        <li><Link href={`/user/login`} >Login</Link></li>
+        {admin ? 
+        (<li><Link href={`/dashboard/`+ user.username}>{user.username}</Link></li>)
+         :
+         (<li><Link href={`/user/login`} >Login</Link></li>)}
         </ul>
         </>
     )
