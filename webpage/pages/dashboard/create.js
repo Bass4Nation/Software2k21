@@ -5,48 +5,85 @@ import { useAllAnnonser } from "../../hooks/useAllAnnonser";
 const creatingAnnonse = () => {
   const {allannonser} = useAllAnnonser()
 
+  const [form, setForm] = useState({
+    id: null,
+    title: '',
+    description: '',
+    kjopnu: null,
+    startbud: null,
+    bildeId: 12840
+   })
+
+   const handleInputOnChange = ({ currentTarget: { name, value } }) =>
+   setForm((state) => ({ ...state, [name]: value }))
+
 
   const [id, setId] = useState()
-  const [title, setTitle] = useState()
-  const [beskrivelse, setbeskrivelse] = useState()
-  const [kjopnu, setKjopNu] = useState()
-  const [startbud, setStartBud] = useState()
-  const [bildeId, setBildeId] = useState()
+
   var sisteId = allannonser[allannonser.length - 1]?.id +1
 
-  const handleTittleChange = (e) => {
-    setTitle(e.currentTarget.value)
-  }
-  const handleDescChange = (e) => {
-    setbeskrivelse(e.currentTarget.value)
-  }
-  const handleBuyNowChange = (e) => {
-    setKjopNu(e.currentTarget.value)
-  }
-  const handleBidChange = (e) => {
-    setStartBud(e.currentTarget.value)
+
+
+  const handleSendSupport = async (event) =>{
+    event.preventDefault()
+    sisteId
+    form.id = sisteId
+    postAnnonse(form)
   }
 
-  const sendAnnonse = async () =>{
-    setId(sisteId)
-    postAnnonse(id, title, beskrivelse, kjopnu, startbud)
 
-  }
-
+  // <form onSubmit={handleSendSupport}>
+  // <label htmlFor="title">Tittel :</label>
+  //   <input type="text" placeholder="tittel" value={form.title} onChange={handleInputOnChange}></input>
+  //   <label htmlFor="description">Beskrivelse:  </label>
+  //   <input type="text" placeholder="beskrivelse" value={form.description} onChange={handleInputOnChange}></input>
+  //   <label htmlFor="kjopnu">Pris, kjøp nå:  </label>
+  //   <input type="number" placeholder="pris" value={form.kjopnu} onChange={handleInputOnChange}></input>
+  //   <label htmlFor="startbud">Pris, startbud:  </label>
+  //   <input type="number" placeholder="start bud" value={form.startbud} onChange={handleInputOnChange}></input>
+  //   <p>Last opp bilde</p> <button >Last opp</button>
+  //   <button type="submit">Legg ut</button>
 
 
   return (
     <>
-      <section>
-        <p>Tittel: </p> <input type="text" placeholder="tittel" onChange={handleTittleChange}></input>
-        <p>Beskrivelse: </p> <input type="text" placeholder="beskrivelse" onChange={handleDescChange}></input>
-        <p>Pris, kjøp nå: </p> <input type="number" placeholder="pris" onChange={handleBuyNowChange}></input>
-        <p>Pris, start bud: </p> <input type="number" placeholder="start bud" onChange={handleBidChange}></input>
+      <form onSubmit={handleSendSupport}>
+        <p>Tittel: </p> 
+        <input
+          type="text"
+          id="title"
+          name="title"
+          onChange={handleInputOnChange}
+          value={form.title}
+        />
+        <p>Beskrivelse: </p> 
+        <input
+          type="text"
+          id="description"
+          name="description"
+          onChange={handleInputOnChange}
+          value={form.description}
+        />        
+        <p>Pris, kjøp nå: </p> 
+        <input
+          type="number"
+          id="kjopnu"
+          name="kjopnu"
+          onChange={handleInputOnChange}
+          value={form.kjopnu}
+        />        
+        <p>Pris, start bud: </p> 
+        <input
+          type="number"
+          id="startbud"
+          name="startbud"
+          onChange={handleInputOnChange}
+          value={form.startbud}
+        />        
         <p>Last opp bilde</p> <button >Last opp</button>
-      </section>
-      <section>
-        <button onClick={sendAnnonse}>Legg ut</button>
-      </section>
+        <button type="submit">Legg ut</button>
+
+      </form>
     </>
   )
 }

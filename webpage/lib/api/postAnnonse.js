@@ -1,27 +1,28 @@
 import axios from 'axios'
 
-export const postAnnonse = async (id, title, beskrivelse, kjopnu, startbud) => {
+export const postAnnonse = async (form) => {
+    // console.log(form)
 
-    let bildeId = 12840
+    // let bildeId = 12840
 
 
-    var data = {
-        "id": id ,
-        "tittel": title,
-        "baskrivelse": beskrivelse,
-        "kjopnu": kjopnu,
-        "startbud": startbud,
-        "bildeid": bildeId
-        }
+    // var data = {
+    //     "id": id ,
+    //     "tittel": title,
+    //     "baskrivelse": beskrivelse,
+    //     "kjopnu": kjopnu,
+    //     "startbud": startbud,
+    //     "bildeid": bildeId
+    //     }
 
         var arr =   {
             id: "2",
             username: "tester",
             password: "tester",
-            userannonser: [data],
+            userannonser: [form],
         }
     
-    // console.log(data)
+     console.log(arr)
     try {
         // POST-request til /api/userdata
         await axios.post('/api/userdata', arr)

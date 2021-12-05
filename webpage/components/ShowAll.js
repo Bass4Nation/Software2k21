@@ -9,7 +9,7 @@ const ShowAll = () =>{
       console.log(allannonser)
 
     const all = allannonser?.map((annonse) =>(
-        <AnnonseThumbnail key={annonse} data={annonse} />
+        <AnnonseThumbnail key={annonse.id} data={annonse} />
     ))
 
     return( 
