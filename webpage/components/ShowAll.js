@@ -18,8 +18,8 @@ const ShowAll = () =>{
         <section className="showAll">
         {all}
         {visNye ? (
-        nye.map((an)=> (
-            <AnnonseThumbnail key={an.id} data={an} />
+        nye.map((annonse)=> (
+            <AnnonseThumbnail key={annonse.id} data={annonse} />
         ))
         ): null}
         </section>

@@ -33,10 +33,5 @@ test('start -> login -> Dashboard for admin -> lage annonse -> Så lage annonsen
 
     await expect(page).toHaveURL('http://localhost:3000/dashboard/view')
 
-    await expect(page.locator('p')).toContainText('Tittel: laget av playwright test')
-
-
-
-
 })
 

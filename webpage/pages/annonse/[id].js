@@ -1,33 +1,12 @@
-import { useRouter } from "next/router";
-import { useAllAnnonser } from "../../hooks/useAllAnnonser";
-import Image from "next/image";
+import Annonse from "../../components/Annonse";
 
-const Annonse = () => {
-  const router = useRouter();
-
-  const { allannonser } = useAllAnnonser();
+const uniqAnnonse = () => {
 
   return (
     <>
-      {allannonser
-        ?.filter((annonse) => annonse.id.toString() === router.query.id)
-        ?.map((i) => (
-          <section key={i.id}>
-            <h2>{i.tittel}</h2>
-            <Image
-              src={"/images/" + i?.bildeid + ".jpg"}
-              alt="Annonse Bilde"
-              width={200}
-              height={150}
-            />
-            <p>Kjøp nå pris: {i.kjopnu}</p> <p>Bud pris: {i.startbud}</p>
-            <button>Kjøp nå</button> <button>Gi bud</button>
-            <p>----------- Beskrivelse -----------</p>
-            <p>{i.beskrivelse}</p>
-          </section>
-        ))}
+    <Annonse />
     </>
   );
 };
 
-export default Annonse;
+export default uniqAnnonse;
