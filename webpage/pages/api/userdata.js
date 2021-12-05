@@ -5,7 +5,7 @@ const userdata = [
     password: "admin",
     userannonser: [
       {
-        id: 1,
+        id: "qHw4LG42",
         tittel: "Gammel Telefon",
         beskrivelse: "oasfnfoiasnfoiasnfasoind",
         kjopnu: 5000,
@@ -13,7 +13,7 @@ const userdata = [
         bildeid: 12837,
       },
       {
-        id: 2,
+        id: "I3e8djWQ",
         tittel: "Klassisk Sofa",
         beskrivelse: "oasfnfoiasnfoiasnfasoind",
         kjopnu: 10000,
@@ -21,7 +21,7 @@ const userdata = [
         bildeid: 12838,
       },
       {
-        id: 3,
+        id: "coGMX5Zo",
         tittel: "Kiste fra langt tilbake",
         beskrivelse: "oasfnfoiasnfoiasnfasoind",
         kjopnu: 1000,
@@ -29,7 +29,7 @@ const userdata = [
         bildeid: 12839,
       },
       {
-        id: 4,
+        id: "O5lI8Vjp",
         tittel: "Kamera",
         beskrivelse: "oasfnfoiasnfoiasnfasoind",
         kjopnu: 1000,
@@ -44,7 +44,7 @@ const userdata = [
     password: "gruppe17",
     userannonser: [
       {
-        id: 5,
+        id: "tvz43hY1",
         tittel: "Aladdins lampe",
         beskrivelse: "oasfnfoiasnfoiasnfasoind",
         kjopnu: 1000,
@@ -52,7 +52,7 @@ const userdata = [
         bildeid: 12841,
       },
       {
-        id: 6,
+        id: "rKMND0jw",
         tittel: "Spesielt design kniv",
         beskrivelse: "oasfnfoiasnfoiasnfasoind",
         kjopnu: 1000,
@@ -60,7 +60,7 @@ const userdata = [
         bildeid: 12842,
       },
       {
-        id: 7,
+        id: "7a1X5l6w",
         tittel: "Gammelt lommeur",
         beskrivelse: "oasfnfoiasnfoiasnfasoind",
         kjopnu: 1000,
@@ -68,7 +68,7 @@ const userdata = [
         bildeid: 12843,
       },
       {
-        id: 8,
+        id: "1Gw0W54r",
         tittel: "Strykejern",
         beskrivelse: "oasfnfoiasnfoiasnfasoind",
         kjopnu: 1000,

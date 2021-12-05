@@ -1,5 +1,6 @@
 import { useRouter } from "next/dist/client/router";
 import { useGlobalState } from "state-pool";
+import NotShow from "./NotShow";
 
 
 const Dashboard = () => {
@@ -25,11 +26,15 @@ const Dashboard = () => {
     };
   
     return (
-      <>
-        <p>Her kommer bruker siden til å være</p>
+      <>{loggedInState ?
+      <section>
+      <p>Her kommer bruker siden til å være</p>
         <button onClick={handleShowAllBtn}>Mine Annonser</button>
         <button onClick={handleCreateBtn}>Lag annonse</button>
         <button onClick={handleLogOutBtn}>Logg ut</button>
+      </section>
+
+      : <NotShow/>}
       </>
     );
 }

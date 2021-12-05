@@ -1,15 +1,23 @@
 import Image from "next/image";
+import Link from 'next/link'
 import { useGlobalState } from "state-pool";
+import NotShow from "./NotShow";
 
 const ViewUserAnnonser = () => {
   const [user, setUser] = useGlobalState("user");
   const [loggedInState, setLoggedInState] = useGlobalState("stateUser");
+  const [alt, setAlt] = useGlobalState("visAlt");
+
+  console.log(alt)
+  console.log(user?.userannonser)
 
   return (
     <>
     {loggedInState ? 
       <section className="userannonser">
         {user?.userannonser?.map((i) => (
+          <>
+          <Link key={i?.id} href={`/annonse/${encodeURIComponent(i?.id)}`} passHref>
           <section key={i.id} className="annonse">
             <p>Tittel: {i.tittel}</p>
             <p>Beskrivelse: {i.beskrivelse}</p>
@@ -23,9 +31,11 @@ const ViewUserAnnonser = () => {
               height={150}
             />
           </section>
+          </Link>
+          </>
         ))}
       </section>
-    : <h2>Du må være innlogget for å se dine annonser</h2>}
+    : <NotShow/> }
     </>
   );
 };

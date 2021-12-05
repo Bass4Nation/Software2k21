@@ -2,16 +2,21 @@ import NavComponent from "./NavComponent"
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import {store, useGlobalState} from 'state-pool';
+import { useAllAnnonser } from "../hooks/useAllAnnonser"
 
 store.setState("stateUser", false);
 store.setState("user", []);
+store.setState("visAlt", []);
+store.setState("nye", []);
+store.setState("visNye", false);
+
 
 const Nav = () =>{
+    const {allannonser} = useAllAnnonser()
+
+    const [alt, setAlt] = useGlobalState("visAlt");
     const [loggedInState, setLoggedInState] = useGlobalState("stateUser");
     const [user, setUser] = useGlobalState("user");
-    const router = useRouter()
-
-    console.log(user)
   
     const navElements = [
         {link: '/', lable: 'Show all'},

@@ -1,82 +1,77 @@
 import axios from 'axios'
 import { useState } from "react";
 import { useAllAnnonser } from "../hooks/useAllAnnonser";
+import { useGlobalState } from "state-pool";
+import { useRouter } from 'next/router'
+import NotShow from './NotShow';
+import { generateRandomId } from '../lib/utils/randId';
+
 
 const CreateAnnonse = () => {
+  const router = useRouter()
   const {allannonser} = useAllAnnonser()
+  const [user, setUser] = useGlobalState("user");
+  const [loggedInState, setLoggedInState] = useGlobalState("stateUser");
+  const [alt, setAlt] = useGlobalState("visAlt");
+  const [nye, setNye] = useGlobalState("nye");
+  const [visNye, setVisNye] = useGlobalState("visNye");
+
+
+
+
 
   const [form, setForm] = useState({
-    id: '',
-    title: '',
-    description: '',
+    id: generateRandomId(),
+    tittel: '',
+    beskrivelse: '',
     kjopnu: '',
     startbud: '',
-    bildeId: 12840
+    bildeid: 12840
    })
 
    const handleInputOnChange = ({ currentTarget: { name, value } }) =>
    setForm((state) => ({ ...state, [name]: value }))
 
 
-  const [id, setId] = useState()
-
-  var sisteId = allannonser[allannonser.length - 1]?.id +1
-
-
 
   const handleSendSupport = async (event) =>{
     event.preventDefault()
     try {
-      sisteId
-      form.id = sisteId
       postFormAnnonse()
-      // window.location.href = "/";
+       router.push('/dashboard/view')
     } catch (err) {
       console.log(err)
     }
 
   }
 
-  const postFormAnnonse = async () => {
-    var arr =   {
-      id: "2",
-      username: "tester",
-      password: "tester",
-      userannonser: [form],
+  const postFormAnnonse = () => {
+    nye.push(form)
+    setVisNye(true)
+    user?.userannonser.push(form)
   }
-    try {
-      const response = await axios.post('/api/userdata/', arr)
-      if(response?.data?.success){
-        console.log("Data sendt inn til databasen")
-        console.log(allannonser)
-      }
-    } catch (error) {
-      console.log("ERROR:")
-      console.log(error)
-    }
-  }
-
-
 
 
   return (
-    <>
+    <>{loggedInState ? 
+
+    
       <form onSubmit={handleSendSupport}>
         <p>Tittel: </p> 
         <input
           type="text"
-          id="title"
-          name="title"
+          id="tittel"
+          name="tittel"
           onChange={handleInputOnChange}
-          value={form.title}
+          value={form.tittel}
         />
         <p>Beskrivelse: </p> 
         <input
           type="text"
-          id="description"
-          name="description"
+          id="beskrivelse"
+          name="beskrivelse"
           onChange={handleInputOnChange}
-          value={form.description}
+          value={form.beskrivelse}
         />        
         <p>Pris, kjøp nå: </p> 
         <input
@@ -98,6 +93,7 @@ const CreateAnnonse = () => {
         <button type="submit">Legg ut</button>
 
       </form>
+    : <NotShow/>}
     </>
   )
 }

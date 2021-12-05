@@ -15,7 +15,7 @@ const LogIn = () => {
     password: "",
   });
 
-  console.log(loggedInState);
+  // console.log(loggedInState);
 
   const handleInputOnChange = ({ currentTarget: { name, value } }) =>
     setForm((state) => ({ ...state, [name]: value }));
@@ -68,6 +68,9 @@ const LogIn = () => {
         <p>Test verdier</p>
         <p>Brukernavn: admin </p>
         <p>Passord: admin</p>
+        <p>Eller</p>
+        <p>Brukernavn: gruppe17 </p>
+        <p>Passord: gruppe17</p>
       </section>
     </>
   );
