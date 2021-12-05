@@ -49,6 +49,8 @@ const CreateAnnonse = () => {
     nye.push(form)
     setVisNye(true)
     user?.userannonser.push(form)
+
+    console.log(form)
   }
 
 

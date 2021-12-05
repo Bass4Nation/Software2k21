@@ -84,12 +84,8 @@ export default function handler(req, res) {
   if (req.method === "POST") {
     // tar i mot data som sendes med forespørselen
     const data = req.body;
-
-
     
-    console.log(data)
-
-    // undersøke om request body har key = question
+    // undersøke om request body har data
     if (!data) {
       // hvis ikke returner 400 Bad Request
       // sender med feilmelding som vi kan bruke (error: ...)
@@ -97,7 +93,7 @@ export default function handler(req, res) {
         .status(400)
         .json({ success: false, error: "Fyll ut all nødvendig data" });
     } else {
-      // legger til data i quiz listen vår
+      // legger til data i database listen vår
       userdata.push(data);
 
       // sender status 201 (Created) og den nye oppdaterte listen

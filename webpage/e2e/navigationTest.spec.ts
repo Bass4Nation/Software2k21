@@ -43,13 +43,36 @@ test('Skal den forvente feil om det er en siden som ikke finnes. ', async ({page
 
 })
 
-test('start -> login -> Mine Annonser -> se alle brukerens info', async ({page}) => {
+test('start -> login -> Dashboard for admin', async ({page}) => {
 
     await page.goto('http://localhost:3000/')
 
     await page.click('text=Login')
 
     await expect(page).toHaveURL('http://localhost:3000/user/login')
+
+    await page.fill('#username', 'admin');
+    
+    await page.fill('#password', 'admin');
+
+    await page.click('text=Logg inn')
+
+    await expect(page).toHaveURL('http://localhost:3000/dashboard/admin')
+
+
+})
+
+test('start -> login -> Dashboard for admin -> Admin sine annonser', async ({page}) => {
+
+    await page.goto('http://localhost:3000/')
+
+    await page.click('text=Login')
+
+    await expect(page).toHaveURL('http://localhost:3000/user/login')
+
+    await page.fill('#username', 'admin');
+    
+    await page.fill('#password', 'admin');
 
     await page.click('text=Logg inn')
 
