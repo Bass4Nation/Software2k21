@@ -1,15 +1,10 @@
+import LogIn from "../../components/LogIn"
 
 const login = () =>{
 
 return(
     <>
-    <section>
-        <p>Brukernavn</p>
-        <input></input>
-        <p>Passord</p>
-        <input></input>
-        <button>Logg inn</button>
-    </section>
+    <LogIn />
     </>
 )
 }
