@@ -9,7 +9,7 @@ const Nav = () =>{
     ]
 
     const navList = navElements.map((single) => (
-        <NavComponent data={single}/>
+        <NavComponent key={single.lable} data={single}/>
     ))
 
     return(

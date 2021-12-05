@@ -85,14 +85,9 @@ export default function handler(req, res) {
     // tar i mot data som sendes med forespørselen
     const data = req.body;
 
-    var arr =   {
-      id: "2",
-      username: "tester",
-      password: "tester",
-      userannonser: [data],
-  }
+
     
-    console.log(arr)
+    console.log(data)
 
     // undersøke om request body har key = question
     if (!data?.tittel) {
