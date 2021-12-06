@@ -9,7 +9,7 @@ const Annonse = () => {
   const [alt, setAlt] = useGlobalState("visAlt");
   const [loggedInState, setLoggedInState] = useGlobalState("stateUser");
 
-// ---------------- useState --------------------------
+  // ---------------- useState --------------------------
   const [bidState, setBidState] = useState(false);
   const [yourBid, setYourBid] = useState(0);
 
@@ -17,8 +17,8 @@ const Annonse = () => {
   const handleBidInput = (event) => {
     setYourBid(event.currentTarget.value);
   };
-//  ---------- Kjøpe vare knapp ------- 
-// Går til en transaksjon side om brukeren er innlogget
+  //  ---------- Kjøpe vare knapp -------
+  // Går til en transaksjon side om brukeren er innlogget
   const handleBuyBtn = () => {
     if (loggedInState == true) {
       router.push("/annonse/transaksjon");
@@ -26,9 +26,9 @@ const Annonse = () => {
       alert("Du må være innlogget for å kjøpe en vare");
     }
   };
-//  --------------- Gi bud knapp -----------
-// Virker bare om brukeren er innlogget
-// setter setBidState til true for å vise et bud input felt
+  //  --------------- Gi bud knapp -----------
+  // Virker bare om brukeren er innlogget
+  // setter setBidState til true for å vise et bud input felt
   const handleBidBtn = () => {
     if (loggedInState == true) {
       setBidState(true);
@@ -37,7 +37,7 @@ const Annonse = () => {
     }
   };
   // ------------ Plassere bud knapp --------------
-  // Den tar bare det som blir skrevet i inputfeltet og 
+  // Den tar bare det som blir skrevet i inputfeltet og
   // printer det som blir skrevet i en alert
   const handlePlaceBidBtn = () => {
     if (yourBid != 0) {
@@ -46,8 +46,8 @@ const Annonse = () => {
       alert("Du må legge inn et bud over 0kr");
     }
   };
-// --------------- Lukke budgiving knapp --------------
-// Bare setter setBidState til false for å fjerne input fra siden.
+  // --------------- Lukke budgiving knapp --------------
+  // Bare setter setBidState til false for å fjerne input fra siden.
   const handleCloseBidBtn = () => {
     if (loggedInState == true) {
       setBidState(false);
@@ -60,7 +60,12 @@ const Annonse = () => {
   const bidField = (
     <>
       <br />
-      <input type="number" onChange={handleBidInput} />
+      <input
+        type="number"
+        id="bud"
+        name="bud"
+        onChange={handleBidInput}
+      />
       <button onClick={handlePlaceBidBtn}>Plasser bud</button>
       <br />
       <button onClick={handleCloseBidBtn}>Lukk Bud</button>
@@ -69,7 +74,7 @@ const Annonse = () => {
 
   return (
     <>
-    {/* Leter etter en annonse med samme id som id i linkadressen */}
+      {/* Leter etter en annonse med samme id som id i linkadressen */}
       {alt
         ?.filter((annonse) => annonse.id.toString() === router.query.id)
         ?.map((i) => (
@@ -83,7 +88,7 @@ const Annonse = () => {
               height={150}
             />
             <p>Kjøp nå pris: {i.kjopnu}</p> <p>Bud pris: {i.startbud}</p>
-            <button onClick={handleBuyBtn}>Kjøp nå</button>
+            <button onClick={handleBuyBtn}>Kjøp varen nå</button>
             {/* Viss bidState er true så vises input feltet ellers så vises gi bud knappen */}
             {bidState ? (
               bidField
