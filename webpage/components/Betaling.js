@@ -3,10 +3,11 @@ import { useRouter } from "next/router";
 const Betaling = () =>{
     const router = useRouter();
 
+    //  Gå videre btn. Går bare til forsiden etter at det har blitt betalt.
     const handleNextBtn = () =>{
         router.push("/")
     }
-
+    
     return(
         <>
         <section>

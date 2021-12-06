@@ -4,20 +4,19 @@ import { useGlobalState } from "state-pool";
 import NotShow from "./NotShow";
 
 const ViewUserAnnonser = () => {
+  // ----- Globale variabler -----------
   const [user, setUser] = useGlobalState("user");
   const [loggedInState, setLoggedInState] = useGlobalState("stateUser");
-  const [alt, setAlt] = useGlobalState("visAlt");
 
-  console.log(alt)
-  console.log(user?.userannonser)
 
   return (
     <>
+    {/* Kan bare se denne siden om brukeren er innlogget */}
     {loggedInState ? 
       <section className="userannonser">
         {user?.userannonser?.map((i) => (
           <>
-          <Link key={i?.id} href={`/annonse/${encodeURIComponent(i?.id)}`} passHref>
+          <Link key={i.id} href={`/annonse/${encodeURIComponent(i?.id)}`} passHref>
           <section key={i.id} className="annonse">
             <p>Tittel: {i.tittel}</p>
             <p>Beskrivelse: {i.beskrivelse}</p>

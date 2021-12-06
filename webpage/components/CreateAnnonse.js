@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { useState } from "react";
 import { useAllAnnonser } from "../hooks/useAllAnnonser";
 import { useGlobalState } from "state-pool";
@@ -9,7 +8,7 @@ import { generateRandomId } from '../lib/utils/randId';
 
 const CreateAnnonse = () => {
   const router = useRouter()
-  const {allannonser} = useAllAnnonser()
+  //  ------------ Globale variabler ---------------
   const [user, setUser] = useGlobalState("user");
   const [loggedInState, setLoggedInState] = useGlobalState("stateUser");
   const [alt, setAlt] = useGlobalState("visAlt");
@@ -19,7 +18,7 @@ const CreateAnnonse = () => {
 
 
 
-
+// ----------- useState for en form som skal bli sendt inn -------------
   const [form, setForm] = useState({
     id: generateRandomId(),
     tittel: '',
@@ -29,36 +28,36 @@ const CreateAnnonse = () => {
     bildeid: 12840
    })
 
+  //  ----------------- setter inn verdier fra input felt inn i form useState --------------
    const handleInputOnChange = ({ currentTarget: { name, value } }) =>
    setForm((state) => ({ ...state, [name]: value }))
 
-
-
-  const handleSendSupport = async (event) =>{
+  //  ------------------------ Her sendes inn den nye annonsen -------------------------
+  //  Skulle ha gått over til en database er en tredjepart tjeneste
+  const handleSendAnnonse = async (event) =>{
     event.preventDefault()
     try {
       postFormAnnonse()
+      // etter at annonsen er laget så går den til brukerens annonser
        router.push('/dashboard/view')
     } catch (err) {
       console.log(err)
     }
-
   }
 
+  //  --------- funkjsonen for å legge inn en ny annonse --------------
   const postFormAnnonse = () => {
     nye.push(form)
+    alt.push(form)
     setVisNye(true)
     user?.userannonser.push(form)
-
-    console.log(form)
   }
 
 
   return (
-    <>{loggedInState ? 
-
-    
-      <form onSubmit={handleSendSupport}>
+    <>
+    {/* Viser bare siden om brukeren er innlogget.  */}
+    {loggedInState ? <form onSubmit={handleSendAnnonse}>
         <p>Tittel: </p> 
         <input
           type="text"
@@ -96,6 +95,7 @@ const CreateAnnonse = () => {
 
       </form>
     : <NotShow/>}
+    {/* Prøver man å gå inn på nettsiden uten å være innlogget. Så viser den NotShow siden. */}
     </>
   )
 }

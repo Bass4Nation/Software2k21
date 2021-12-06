@@ -8,25 +8,29 @@ const Dashboard = () => {
   
     // ------ Global variabel for brukeren som er innlogget
     const [loggedInState, setLoggedInState] = useGlobalState("stateUser");
-    const [user, setUser] = useGlobalState("user");
-
-    console.log(user.userannonser)
+    const [user, setUser] = useGlobalState("user");  
   
-  
+    // ---------- Knapp for vis alle brukerens annonser --------------
     const handleShowAllBtn = () => {
       router.push("/dashboard/view");
     };
+    // ---------- Knapp for å lage en annonse -----------------
     const handleCreateBtn = () => {
       router.push("/dashboard/create");
     };
+    //  ----------- Knapp for å logge ut av siden ----------------
       const handleLogOutBtn = () => {
+        // setter globale variabelen til false
       setLoggedInState(false)
+      // Global variabel for brukeren blir tømt.
       setUser([])
       router.push("/");
     };
   
     return (
-      <>{loggedInState ?
+      <>
+      {/* Viser bare siden om man er innlogget */}
+      {loggedInState ?
       <section>
       <p>Her kommer bruker siden til å være</p>
         <button onClick={handleShowAllBtn}>Mine Annonser</button>
@@ -35,6 +39,7 @@ const Dashboard = () => {
       </section>
 
       : <NotShow/>}
+      {/* Viser ikke siden om man ikke er innlogget. Så bruker NotShow */}
       </>
     );
 }

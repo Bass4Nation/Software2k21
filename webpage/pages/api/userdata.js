@@ -1,3 +1,6 @@
+// Bare en hardcoded database. Slik at nettsiden har noe info å vise.
+// Dette skulle ha vært i en database som er eks online.
+
 const userdata = [
   {
     id: "0",

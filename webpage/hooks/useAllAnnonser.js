@@ -6,17 +6,18 @@ import { useGlobalState } from "state-pool";
 
 
  export const useAllAnnonser = () =>{
+    //  Behandling av API.
+    //   --------- Globale variabler ---------------
     const [alt, setAlt] = useGlobalState("visAlt");
+    //  ---------- useState------------------
     const [allannonser, setAllAnnonser] = useState([])
 
     useEffect(() => {
         const getAllData = async () => {
             try {
-                // GET-request til /api/quiz
+                // GET-request til /api/userdata
                 const response = await axios.get('/api/userdata')
-    
-                //    console.log(response?.data.data[0].userannonser)
-    
+        
                 // response.data kommer fra axios
                 // success er noe som jeg har laget i responsen
                 if (response?.data?.success) {

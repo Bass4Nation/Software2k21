@@ -8,14 +8,12 @@ export const useAllData = () => {
     const [alldata, setAllData] = useState({})
 
     useEffect(() => {
-        let abortController = new AbortController();
+    
         const getAllData = async () => {
             try {
-                // GET-request til /api/quiz
+                // GET-request til /api/userdata
                 const response = await axios.get('/api/userdata')
-    
-                console.log(response)
-    
+        
                 // response.data kommer fra axios
                 // success er noe som jeg har laget i responsen
                 if (response?.data?.success) {
@@ -29,9 +27,6 @@ export const useAllData = () => {
         }
         // trigger henting av data når komponenten lages
     getAllData()
-    return () => {
-        abortController.abort();
-      }
     }, [])
 
     return {alldata}
