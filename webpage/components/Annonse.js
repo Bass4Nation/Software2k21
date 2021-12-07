@@ -60,12 +60,7 @@ const Annonse = () => {
   const bidField = (
     <>
       <br />
-      <input
-        type="number"
-        id="bud"
-        name="bud"
-        onChange={handleBidInput}
-      />
+      <input type="number" id="bud" name="bud" onChange={handleBidInput} />
       <button onClick={handlePlaceBidBtn}>Plasser bud</button>
       <br />
       <button onClick={handleCloseBidBtn}>Lukk Bud</button>

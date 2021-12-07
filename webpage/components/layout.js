@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
       </section>
       {/* Nav blir brukt her. */}
       <Nav />
-{/* Alle andre siden blir plassert på children plassen */}
+      {/* Alle andre siden blir plassert på children plassen */}
       <main>{children}</main>
       <footer>
         <p>Laget av</p>

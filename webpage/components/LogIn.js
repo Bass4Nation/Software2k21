@@ -8,9 +8,9 @@ const LogIn = () => {
   const [loggedInState, setLoggedInState] = useGlobalState("stateUser");
   const [user, setUser] = useGlobalState("user");
   const router = useRouter();
-// -------- Kaller på custom hook --------------
+  // -------- Kaller på custom hook --------------
   const { alldata } = useAllData();
-// ----------- useState Form -----------------
+  // ----------- useState Form -----------------
   const [form, setForm] = useState({
     username: "",
     password: "",
@@ -19,7 +19,7 @@ const LogIn = () => {
   const handleInputOnChange = ({ currentTarget: { name, value } }) =>
     setForm((state) => ({ ...state, [name]: value }));
 
-  //  --------------- sjekker login infoen som er i handleInputOnChange -------- 
+  //  --------------- sjekker login infoen som er i handleInputOnChange --------
   const handleLogInCheck = async (event) => {
     event.preventDefault();
     // -------- Kjører logInCheck for å sjekke info som er i form --------------

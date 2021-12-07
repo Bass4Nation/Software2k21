@@ -9,6 +9,28 @@ test('Skal gå til login siden', async ({page}) => {
     await expect(page).toHaveURL('http://localhost:3000/user/login')
 })
 
+test('Skal søke etter Kamera og sjekker man har ankommet annonsen', async ({page}) => {
+
+    await page.goto('http://localhost:3000/')
+
+    await page.fill('#searchField', 'Kamera');
+
+    await page.click('text=SØK')
+
+    await expect(page).toHaveURL('http://localhost:3000/annonse/O5lI8Vjp')
+})
+
+test('Dobbel sjekker om søkefeltet virker. Om man ankommer siden', async ({page}) => {
+
+    await page.goto('http://localhost:3000/')
+
+    await page.fill('#searchField', 'Kiste fra langt tilbake');
+
+    await page.click('text=SØK')
+
+    await expect(page).toHaveURL('http://localhost:3000/annonse/coGMX5Zo')
+})
+
 test('Skal gå til login siden, så klikke på Show All så gå til forsiden', async ({page}) => {
 
     await page.goto('http://localhost:3000/')

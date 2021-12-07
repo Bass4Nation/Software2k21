@@ -1,13 +1,12 @@
-import Betaling from "../../../components/Betaling"
-
+import Betaling from "../../../components/Betaling";
 
 const index = () => {
-    // Bruker Betaling.js komponent fra mappen components
-    return(
-        <>
-        <Betaling/>
-        </>
-    )
-}
+  // Bruker Betaling.js komponent fra mappen components
+  return (
+    <>
+      <Betaling />
+    </>
+  );
+};
 
-export default index
+export default index;

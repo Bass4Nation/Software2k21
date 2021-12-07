@@ -17,6 +17,9 @@ a {
 
 ul {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -24,10 +27,8 @@ ul {
   background-color: #333;
 }
 
-
-
 li a {
-  display: block;
+  display: inline-block;
   color: white;
   text-align: center;
   padding: 14px 16px;
@@ -37,13 +38,29 @@ li a {
 li a:hover {
   background-color: #111;
 }
-li input{
-  display: block;
+
+li .searchbtn {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+li .searchbtn:hover {
+  background-color: #111;
+}
+
+li input {
+  align-self: center;
   color: black;
   text-align: center;
   padding: 10px 10px;
   text-decoration: none;
   margin-top: 5px;
+}
+
+.login {
+  align-self: flex-end;
 }
 
 footer {
@@ -57,27 +74,26 @@ footer {
   text-align: center;
 }
 
-.userannonser{
- display: flex;
- flex-wrap:wrap;
+.userannonser {
+  display: flex;
+  flex-wrap: wrap;
 }
-.userannonser .annonse{
-  padding:2em;
+.userannonser .annonse {
+  padding: 2em;
 }
-.userannonser .annonse.annonse:hover{
+.userannonser .annonse.annonse:hover {
   border-style: solid;
 }
 
-.showAll{
+.showAll {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 
-.showAll .annonse{
-  max-width:10em;
-  padding:2em;
+.showAll .annonse {
+  max-width: 10em;
+  padding: 2em;
 }
-.showAll .annonse:hover{
-  border-style:inset;
+.showAll .annonse:hover {
+  border-style: inset;
 }
-
