@@ -69,9 +69,7 @@ const LogIn = () => {
           />
           <button type="submit">Logg inn</button>
         </form>
-      </section>
-      {/* Bare test verdier som sensor kan bruke for å logge seg inn på nettsiden */}
-      <section>
+        <section>
         <p>Test verdier</p>
         <p>Brukernavn: admin </p>
         <p>Passord: admin</p>
@@ -79,6 +77,8 @@ const LogIn = () => {
         <p>Brukernavn: gruppe17 </p>
         <p>Passord: gruppe17</p>
       </section>
+      </section>
+      {/* Bare test verdier som sensor kan bruke for å logge seg inn på nettsiden */}
     </>
   );
 };

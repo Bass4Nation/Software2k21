@@ -31,7 +31,7 @@ const Dashboard = () => {
       {/* Viser bare siden om man er innlogget */}
       {loggedInState ? (
         <section>
-          <p>Her kommer bruker siden til å være</p>
+          <h2>Dashboard siden</h2>
           <button onClick={handleShowAllBtn}>Mine Annonser</button>
           <button onClick={handleCreateBtn}>Lag annonse</button>
           <button onClick={handleLogOutBtn}>Logg ut</button>
